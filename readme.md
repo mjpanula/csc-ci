@@ -1,4 +1,6 @@
-# CSC-virtuaalikoneen pystytys
+# CSC-virtuaalikoneen ja CI-putken pystytys
+
+Tavoitteena on pystyttää virtuaalikone siten että GitHub-palvelu pystyy asentamaan sinne sovelluksia ssh-yhteyden läpi automaattisesti.
 
 CSC:n virtuaalikonepalvelun nimi on [Pouta](https://research.csc.fi/service/cpouta-community-cloud-service/).
 
@@ -10,6 +12,7 @@ CSC:n virtuaalikonepalvelun nimi on [Pouta](https://research.csc.fi/service/cpou
 #### Virtuaalikoneen asennus
 
 Kuen edelliset on tehty, voi luoda oman virtuaalikoneen [näiden ohjeiden](https://docs.csc.fi/cloud/pouta/) perusteella. Esityisesti [tämä](https://docs.csc.fi/cloud/pouta/launch-vm-from-web-gui/).
+
 
 ## Englanniksi
 
