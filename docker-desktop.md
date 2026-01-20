@@ -28,6 +28,7 @@ BIOS-asetuksiin liittyvää vianmääritystä on kuvattu tässä linkissä:
 WSL2 käyttää Microsoftin **Hyper-V-virtualisointia**, joka puolestaan vaatii rautavirtualisoinnin olevan käytössä.
 
 Microsoftin oma dokumentaatio asiasta:
+[https://learn.microsoft.com/en-us/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install)
 [https://learn.microsoft.com/en-us/windows/wsl/faq](https://learn.microsoft.com/en-us/windows/wsl/faq)
 
 Ilman rautavirtualisointia:
