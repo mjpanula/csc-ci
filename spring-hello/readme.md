@@ -17,6 +17,11 @@ Konttipohjainen Spring Boot -sovellus, jossa kehitys on mahdollista kontissa ja 
 
 [Tehopläjäys dockerista](https://gist.github.com/matti/0b44eb865d70d98ffe0351fd8e6fa35d) (docker devops-kurssin materiaali pohjautuu pitkälti tähän)
 
+Poimintoja edellisestä
+
+- Jos kontti on käynnistetty vain -d -vivulla "taustalle", voi siihen terminaalilla kytekytyä komennolla `docker attach <kontin-nimi>`
+- Jos käynnissä olevaan konttiin haluaa kytkeytyä uudellä terminaalilla, voi ajaa `docker exec -it <kontin-nimi> bash`
+
 - [] Kehityksen aikainen ajoympäristö `docker run -v ".\hello:/app" -p 8080:8080 -it eclipse-temurin:17-jdk bash`
     - `root@fe8b5857fdee:/app# ./mvnw spring-boot:run`
 - [ ] `Dockerfile` -tiedoston luominen multi-stage buildille
