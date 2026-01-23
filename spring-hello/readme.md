@@ -12,7 +12,11 @@ Konttipohjainen Spring Boot -sovellus, jossa kehitys on mahdollista kontissa ja 
 - [ ] Projektin rakenne ja gradle/maven -konfiguraation tarkistaminen
 
 ### 2. Docker-kehitysympäristö
-- [] Kehityksen aikainen ajoympäristö `docker run -v ".:/app" -p 8080:8080 -it eclipse-temurin:17-jdk bash`
+
+[Port-forwardingista ja volume-mounteista tietoa](https://courses.mooc.fi/org/uh-cs/courses/devops-with-docker/chapter-2/interacting-with-the-container-via-volumes-and-ports)
+
+- [] Kehityksen aikainen ajoympäristö `docker run -v ".\hello:/app" -p 8080:8080 -it eclipse-temurin:17-jdk bash`
+    - `root@fe8b5857fdee:/app# ./mvnw spring-boot:run`
 - [ ] `Dockerfile` -tiedoston luominen multi-stage buildille
 - [ ] Sovelluksen ajaminen kehityskontissa (mount volume koodille)
 - [ ] Kehitystyönkulun testaaminen kontissa
