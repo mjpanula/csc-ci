@@ -5,11 +5,11 @@ Konttipohjainen Spring Boot -sovellus, jossa kehitys on mahdollista kontissa ja 
 ## Työvaiheet (täydentyy myöhemmin)
 
 ### 1. Projektin perustaminen
-- [ ] Spring Boot -projektin luominen Spring Initializr:in avulla
-- [ ] Java-version valitseminen (esim. Java 17+)
-- [ ] Spring Boot -version valitseminen
-- [ ] Tarvittavien riippuvuuksien lisääminen (Spring Web, Spring Data JPA, tietokantajärjestelmä)
-- [ ] Projektin rakenne ja gradle/maven -konfiguraation tarkistaminen
+- [x] Spring Boot -projektin luominen Spring Initializr:in avulla
+- [x] Java-version valitseminen (esim. Java 17+)
+- [x] Spring Boot -version valitseminen
+- [x] Tarvittavien riippuvuuksien lisääminen (Spring Web, Spring Data JPA, tietokantajärjestelmä) (ei oteta JPA:ta vielä)
+- [x] Projektin rakenne ja gradle/maven -konfiguraation tarkistaminen
 
 ### 2. Docker-kehitysympäristö
 
@@ -21,8 +21,10 @@ Poimintoja edellisestä
 
 - Jos kontti on käynnistetty vain -d -vivulla "taustalle", voi siihen terminaalilla kytekytyä komennolla `docker attach <kontin-nimi>`
 - Jos käynnissä olevaan konttiin haluaa kytkeytyä uudellä terminaalilla, voi ajaa `docker exec -it <kontin-nimi> bash`
+- Jos terminaalin haluaa kontista irti ilman että kontti sammuu, Ctrl+P, Ctrl+Q vapauttaa
 
-- [] Kehityksen aikainen ajoympäristö `docker run -v ".\hello:/app" -p 8080:8080 -it eclipse-temurin:17-jdk bash`
+- [] Kehityksen aikainen ajoympäristö 
+    - `docker run -v ".\hello:/app" -p 8080:8080 -it eclipse-temurin:17-jdk bash` Suoraan interaktiiviseen terminaaliin. -d -täpällä se käynnistyy taustalle
     - `root@fe8b5857fdee:/app# ./mvnw spring-boot:run`
 - [ ] `Dockerfile` -tiedoston luominen multi-stage buildille
 - [ ] Sovelluksen ajaminen kehityskontissa (mount volume koodille)
