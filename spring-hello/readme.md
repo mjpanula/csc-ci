@@ -12,6 +12,7 @@ Konttipohjainen Spring Boot -sovellus, jossa kehitys on mahdollista kontissa ja 
 - [ ] Projektin rakenne ja gradle/maven -konfiguraation tarkistaminen
 
 ### 2. Docker-kehitysympäristö
+- [] Kehityksen aikainen ajoympäristö `docker run -v ".:/app" -p 8080:8080 -it eclipse-temurin:17-jdk bash`
 - [ ] `Dockerfile` -tiedoston luominen multi-stage buildille
 - [ ] Sovelluksen ajaminen kehityskontissa (mount volume koodille)
 - [ ] Kehitystyönkulun testaaminen kontissa
