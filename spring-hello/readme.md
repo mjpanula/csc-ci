@@ -15,6 +15,8 @@ Konttipohjainen Spring Boot -sovellus, jossa kehitys on mahdollista kontissa ja 
 
 [Port-forwardingista ja volume-mounteista tietoa](https://courses.mooc.fi/org/uh-cs/courses/devops-with-docker/chapter-2/interacting-with-the-container-via-volumes-and-ports)
 
+[Tehopläjäys dockerista](https://gist.github.com/matti/0b44eb865d70d98ffe0351fd8e6fa35d) (docker devops-kurssin materiaali pohjautuu pitkälti tähän)
+
 - [] Kehityksen aikainen ajoympäristö `docker run -v ".\hello:/app" -p 8080:8080 -it eclipse-temurin:17-jdk bash`
     - `root@fe8b5857fdee:/app# ./mvnw spring-boot:run`
 - [ ] `Dockerfile` -tiedoston luominen multi-stage buildille
