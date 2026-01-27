@@ -26,6 +26,7 @@ Poimintoja edellisestä
 - [] Kehityksen aikainen ajoympäristö 
     - `docker run -v ".\hello:/app" -p 8080:8080 -it eclipse-temurin:17-jdk bash` Suoraan interaktiiviseen terminaaliin. -d -täpällä se käynnistyy taustalle
     - `root@fe8b5857fdee:/app# ./mvnw spring-boot:run`
+    - Sovelluksen saa suoraan käyntiin seuraavalla komennolla: `docker run -it -p 8080:8080 -v ${PWD}/hello:/app -w /app eclipse-temurin:17-jdk bash -lc "./mvnw spring-boot:run"`
 - [ ] `Dockerfile` -tiedoston luominen multi-stage buildille
 - [ ] Sovelluksen ajaminen kehityskontissa (mount volume koodille)
 - [ ] Kehitystyönkulun testaaminen kontissa
