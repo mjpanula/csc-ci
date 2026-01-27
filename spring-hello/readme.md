@@ -27,6 +27,13 @@ Poimintoja edellisestä
     - `docker run -v ".\hello:/app" -p 8080:8080 -it eclipse-temurin:17-jdk bash` Suoraan interaktiiviseen terminaaliin. -d -täpällä se käynnistyy taustalle
     - `root@fe8b5857fdee:/app# ./mvnw spring-boot:run`
     - Sovelluksen saa suoraan käyntiin seuraavalla komennolla: `docker run -it -p 8080:8080 -v ${PWD}/hello:/app -w /app eclipse-temurin:17-jdk bash -lc "./mvnw spring-boot:run"`
+    - Edellinen komento ei kuitenkaan ole paras vaihtoehto, koska springiiä ei voi helposti sammuttaa ilman että koko kontti sammuu, ja uudelleenkäynnistys vaatii uuden kontin ja kirjastoriippuvuuksien uudelleenlatauksen, parempi on käynnistää interaktiivinen terminaali seuraavasti:
+        -  `docker run -it -p 8080:8080 -v ${PWD}/spring-hello/hello:/app -w /app eclipse-temurin:17-jdk bash` ja käynnistää spring erikseen terminaalista.
+        - Edellisestä syntyy kontti jolla on nimi. Kontin voi käynnistää uusiksi seuraavasti: `docker start <kontin nimi>`
+        - Terminaalin konttiin saa auki seuraavasti `docker exec -it <kontin nimi> bash`
+        - Nyt terminaalista voi käynnistää spring svelluksen: `./mvnw spring-boot:run`
+    - Konttiin voi avata rinnakkaisen terminaalin esimerkiksi näin:
+        - `docker exec -it <kontin nimi> bash`
 - [ ] `Dockerfile` -tiedoston luominen multi-stage buildille
 - [ ] Sovelluksen ajaminen kehityskontissa (mount volume koodille)
 - [ ] Kehitystyönkulun testaaminen kontissa
