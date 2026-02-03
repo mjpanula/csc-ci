@@ -61,6 +61,8 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H 86.50.22.55 >> ~/.ssh/known_hosts
           ssh -i ~/.ssh/deploy_key ubuntu@86.50.22.55 << 'EOF'
+          export DOCKER_USERNAME="${{ secrets.DOCKERHUB_USERNAME }}"
+          export DOCKER_TOKEN="${{ secrets.DOCKERHUB_TOKEN }}"
           echo "$DOCKER_TOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin
           docker pull $DOCKER_USERNAME/spring-hello:latest
           docker stop spring-hello || true
