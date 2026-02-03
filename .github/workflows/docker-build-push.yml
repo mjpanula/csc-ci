@@ -45,3 +45,25 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to server
+        env:
+          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H 86.50.22.55 >> ~/.ssh/known_hosts
+          ssh -i ~/.ssh/deploy_key ubuntu@86.50.22.55 << 'EOF'
+          echo "$DOCKER_TOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin
+          docker pull $DOCKER_USERNAME/spring-hello:latest
+          docker stop spring-hello || true
+          docker rm spring-hello || true
+          docker run -d -p 80:8080 --name spring-hello $DOCKER_USERNAME/spring-hello:latest
+          EOF
