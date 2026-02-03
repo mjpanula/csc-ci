@@ -16,7 +16,7 @@ public class HelloApplication {
 	public static class HelloController {
 		@GetMapping("/")
 		public String hello() {
-			return "Hello, World docker image!2";
+			return "Hello. Running an auto deployed image from docker hub!";
 		}
 
 		@GetMapping("/api/hello")
