@@ -1,0 +1,34 @@
+services:
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: testdb
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - testnet
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U testuser -d testdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  ubuntu:
+    image: ubuntu:latest
+    tty: true
+    command: ["/bin/sh", "-c", "apt-get update && apt-get install -y postgresql-client && sleep infinity"]
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - testnet
+
+volumes:
+  db-data:
+
+networks:
+  testnet:
+
+  
