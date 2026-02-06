@@ -18,7 +18,7 @@ services:
   ubuntu:
     image: ubuntu:latest
     tty: true
-    command: ["/bin/sh", "-c", "apt-get update && apt-get install -y postgresql-client && sleep infinity"]
+    command: ["/bin/sh", "-c", "apt-get update && apt-get install -y postgresql-client && bash"]
     depends_on:
       db:
         condition: service_healthy
