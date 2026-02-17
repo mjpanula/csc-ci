@@ -465,8 +465,7 @@ services:
 2. Luo Student-projekti my.csc.fi:ssä
 3. Lisää cPouta-palvelu projektiin
 4. Luo virtuaalikone cPouta-webkäyttöliittymässä
-5. Asenna SSH-avaimet
-6. Avaa firewall (portit 22, 80, 8080...)
+(SSH-avaimet ja firewall (portit 22, 80, 8080...) webkäyttölittymästä)
 
 ---
 
