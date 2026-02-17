@@ -204,13 +204,13 @@ volumes:
 ```
 Virtuaalikoneet:                  Kontit (Docker):
 ┌─────────────────────────┐      ┌─────────────────────────┐
-│     OS A │         OS B │      │  Kontti A  │  Kontti B  │
-│          │              │      ├────────────┴────────────┤
-│          │              │      │   Sovellus + riippuv.   │
-├─────────────────────────┤      ├─────────────────────────┤
-│      Hypervisor         │      │     Docker Engine       │
-├─────────────────────────┤      ├─────────────────────────┤
-│  Host-käyttöjärjestelmä │      │  Host-käyttöjärjestelmä │
+| App A +    | App B +    |      │  Kontti A  │  Kontti B  │
+│ OS A       │ OS B       │      │            │            │
+├────────────┴────────────┤      ├────────────┴────────────┤
+| Host-OS (Linux, ESXi,   |      | Host OS (Linux) +       |
+| Windos Server) +        |      | Docker Engine           |
+| Hypervisor (QUEMU, KVM, |      |                         |
+| Hyper-V)                |      |                         |
 └─────────────────────────┘      └─────────────────────────┘
 ```
 
