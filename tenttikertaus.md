@@ -204,13 +204,13 @@ volumes:
 ```
 Virtuaalikoneet:                  Kontit (Docker):
 ┌─────────────────────────┐      ┌─────────────────────────┐
-│ Sovellus A │ Sovellus B │      │  Kontti A  │  Kontti B  │
-├────────────┴────────────┤      ├────────────┴────────────┤
-│   Oma käyttöjärjestelmä  │      │   Sovellus + riippuv.   │
+│     OS A │         OS B │      │  Kontti A  │  Kontti B  │
+│          │              │      ├────────────┴────────────┤
+│          │              │      │   Sovellus + riippuv.   │
 ├─────────────────────────┤      ├─────────────────────────┤
-│      Hypervisor          │      │     Docker Engine       │
+│      Hypervisor         │      │     Docker Engine       │
 ├─────────────────────────┤      ├─────────────────────────┤
-│   Host-käyttöjärjestelmä │      │   Host-käyttöjärjestelmä │
+│  Host-käyttöjärjestelmä │      │  Host-käyttöjärjestelmä │
 └─────────────────────────┘      └─────────────────────────┘
 ```
 
